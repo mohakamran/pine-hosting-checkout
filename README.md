@@ -96,7 +96,3 @@ Where the brief left room for interpretation, I went with:
 - Support conditional codes, such as a minimum spend, an expiry date, or codes limited to certain products.
 - Add property-based tests, for example "the total is never negative" over random baskets.
 - Add a small CLI that takes a basket as arguments and prints the receipt.
-
-## AI tools used
-
-TODO – written by me
