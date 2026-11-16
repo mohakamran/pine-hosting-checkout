@@ -27,6 +27,10 @@
         "cs": "php-cs-fixer fix --dry-run --diff",
         "cs:fix": "php-cs-fixer fix",
         "demo": "php bin/demo.php",
+        "serve": [
+            "Composer\\Config::disableProcessTimeout",
+            "php -S localhost:8000 -t public"
+        ],
         "check": [
             "@cs",
             "@analyse",

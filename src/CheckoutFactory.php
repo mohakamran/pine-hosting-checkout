@@ -11,14 +11,19 @@ use Checkout\Offer\MultiBuyOffer;
 /** Wires up the catalog, offers and codes from the brief. */
 final class CheckoutFactory
 {
-    public static function default(): Checkout
+    public static function catalog(): Catalog
     {
-        $catalog = new Catalog([
+        return new Catalog([
             new Product('NB', 'Notebook', Money::fromString('4.00')),
             new Product('PEN', 'Pen pack', Money::fromString('5.00')),
             new Product('MUG', 'Mug', Money::fromString('8.50')),
             new Product('TOTE', 'Tote bag', Money::fromString('12.00')),
         ]);
+    }
+
+    public static function default(): Checkout
+    {
+        $catalog = self::catalog();
 
         $offers = [
             new MultiBuyOffer('NB', 3, 2, '3-for-2'),

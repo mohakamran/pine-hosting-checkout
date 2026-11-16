@@ -29,4 +29,10 @@ final readonly class Catalog
     {
         return $this->productsBySku[$sku] ?? throw UnknownSku::forSku($sku);
     }
+
+    /** @return list<Product> in the order they were added */
+    public function all(): array
+    {
+        return array_values($this->productsBySku);
+    }
 }
